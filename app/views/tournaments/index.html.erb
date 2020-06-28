@@ -1,0 +1,17 @@
+<h1>Les tournois</h1>
+
+<%= link_to "Créer mon tournoi", new_tournament_path %>
+
+<% @tournaments.each do |tournament| %>
+  <h2><%= tournament.name %></h2>
+  <p><%= cl_image_tag tournament.photo.key , height: 400, width: 400, crop: :fill%></p>
+  <p><%= tournament.start_tournament%></p>
+  <p><%= tournament.end_tournament%></p>
+  <p><%= tournament.activity%></p>
+  <p><%= link_to "Aller voir le tournoi", tournament_path(tournament)  %></p>
+  <p><%= link_to "Supprimer", tournament_path(tournament), method: :delete, data: { confirm: "Are you sure?" }   %></p>
+
+<% end %>
+
+
+

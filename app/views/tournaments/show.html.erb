@@ -1,0 +1,6 @@
+  <h2><%= @tournament.name %></h2>
+  <p><%= cl_image_tag @tournament.photo.key , height: 400, width: 400, crop: :fill%></p>
+  <p><%= @tournament.start_tournament%></p>
+  <p><%= @tournament.end_tournament%></p>
+  <p><%= @tournament.activity%></p>
+<p><%= link_to "index" , tournaments_path  %></p>

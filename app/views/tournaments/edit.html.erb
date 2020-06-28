@@ -1,0 +1,8 @@
+<%= simple_form_for @tournament do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file%>
+  <%= f.input :start_tournament %>
+  <%= f.input :end_tournament %>
+  <%= f.input :activity%>
+  <%= f.button :submit, "Créer mon tournoi" %>
+<% end  %>
