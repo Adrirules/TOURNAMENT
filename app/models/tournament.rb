@@ -8,7 +8,4 @@ class Tournament < ApplicationRecord
   validates :photo, presence: true
   validates :activity, presence: true
 
-
-
-
 end
