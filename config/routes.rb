@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'contact', to:'pages#contact', as: :contact
 
   resources :tournaments
+  resources :teams
 
 
   devise_for :users

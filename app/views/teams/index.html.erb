@@ -1,0 +1,11 @@
+<h1>Toutes les équipes</h1>
+
+<%= link_to "Créer mon équipe", new_team_path %>
+
+
+<% @teams.each do |team| %>
+  <h2><%= team.name %></h2>
+  <p><%= link_to "Aller voir l'équipe", team_path(team)  %></p>
+  <p><%= link_to "Supprimer léquipe", team_path(team), method: :delete, data: { confirm: "Are you sure?" }   %></p>
+
+<% end %>

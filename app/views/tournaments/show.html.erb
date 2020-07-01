@@ -1,6 +1,14 @@
   <h2><%= @tournament.name %></h2>
   <p><%= cl_image_tag @tournament.photo.key , height: 400, width: 400, crop: :fill%></p>
-  <p><%= @tournament.start_tournament%></p>
-  <p><%= @tournament.end_tournament%></p>
-  <p><%= @tournament.activity%></p>
-<p><%= link_to "index" , tournaments_path  %></p>
+  <p>Début du tournoi : <%=  @tournament.start_tournament%></p>
+  <p>Fin du tournoi : <%= @tournament.end_tournament%></p>
+  <p>Activité :<%= @tournament.activity%></p>
+  <p>Equipes participantes :</p>
+  <% @tournament.teams.each do |team_tournament|  %>
+  <ul>
+    <li><%= team_tournament.name %></li>
+  </ul>
+    <% end %>
+<p><%= link_to "Tous les tournois" , tournaments_path  %></p>
+
+
