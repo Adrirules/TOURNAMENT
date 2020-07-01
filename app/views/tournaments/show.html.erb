@@ -4,11 +4,10 @@
   <p>Fin du tournoi : <%= @tournament.end_tournament%></p>
   <p>Activité :<%= @tournament.activity%></p>
   <p>Equipes participantes :</p>
-  <% @tournament.teams.each do |team_tournament|  %>
+  <% @tournament.teams.each do |team|  %>
   <ul>
-    <li><%= team_tournament.name %></li>
+    <li><%= link_to team.name , team_path(team)%></li>
+
   </ul>
     <% end %>
 <p><%= link_to "Tous les tournois" , tournaments_path  %></p>
-
-

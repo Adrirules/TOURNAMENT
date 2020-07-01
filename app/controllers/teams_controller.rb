@@ -13,8 +13,14 @@ class TeamsController < ApplicationController
   end
 
   def create
-    Team.create(team_params)
-    redirect_to teams_path
+    @team = Team.new(team_params)
+    #@team.user = current_user
+    #@team = current_user.team.build.(team_params)
+    if @team.save
+      redirect_to teams_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -33,7 +39,7 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:name, :tournament_id)
+    params.require(:team).permit(:name, :tournament_id, :user)
   end
 
    def set_team
